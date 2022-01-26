@@ -1,0 +1,13 @@
+{
+  "name": "file-size-parser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Fardeen Panjwani",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^27.4.7"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
