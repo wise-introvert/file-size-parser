@@ -1,3 +1,11 @@
+/**
+ *********************************************
+ *********************************************
+ ************* DO NOT MODIFY *****************
+ *********************************************
+ *********************************************
+ */
+
 const fileParser = require("./file-parser");
 
 it("parse file size given in kbs", () => {
@@ -5,15 +13,15 @@ it("parse file size given in kbs", () => {
 });
 
 it("parse file size given in mbs", () => {
-  expect(fileParser("100mb")).toBe(100);
+  expect(fileParser("100mb")).toBe(100.00);
 });
 
 it("parse file size given in gbs", () => {
-  expect(fileParser("100gb")).toBe(100000);
+  expect(fileParser("100gb")).toBe(102400.0);
 });
 
 it("parse file size given in tbs", () => {
-  expect(fileParser("100tb")).toBe(100000000);
+  expect(fileParser("100tb")).toBe(104857600.0);
 });
 
 it("should parse arguments with arbitary number of spaces", () => {
@@ -22,8 +30,22 @@ it("should parse arguments with arbitary number of spaces", () => {
   expect(fileParser("   100           kb")).toBe(0.1);
 });
 
-it("should throw an error if the argument is malformed", () => {
-  expect(fileParser("100 say-what-now")).toThrow();
-  expect(fileParser("200aba")).toThrow();
-  expect(fileParser("something completely different")).toThrow();
-});
+describe("Invalid arguments", () => {
+  it("should throw an error when just a number is passed", () => {
+    expect(fileParser(100)).toThrow()
+    expect(fileParser("100")).toThrow()
+  });
+
+  it("should throw an error when there are no numbers",() => {
+    expect(fileParser("say-what-now")).toThrow();
+  })
+
+  it("should throw an error when no argument passed", () => {
+    expect(fileParser()).toThrow()
+  })
+
+  it("should throw an error when invalid unit type is given", () => {
+    expect(fileParser("100wp")).toThrow();
+  })
+})
+
