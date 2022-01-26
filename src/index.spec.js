@@ -42,12 +42,4 @@ describe("Invalid arguments", () => {
   it("should throw an error when there are no numbers", () => {
     expect(() => fileParser("say-what-now")).toThrow();
   });
-
-  it("should throw an error when no argument passed", () => {
-    expect(() => fileParser()).toThrow();
-  });
-
-  it("should throw an error when invalid unit type is given", () => {
-    expect(() => fileParser("100wp")).toThrow();
-  });
 });
