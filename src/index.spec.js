@@ -36,7 +36,7 @@ describe("Invalid arguments", () => {
   });
 
   it("should throw an error when there is not unit", () => {
-    expect(filelParser("100")).toThrow();
+    expect(fileParser("100")).toThrow();
   });
 
   it("should throw an error when there are no numbers", () => {
