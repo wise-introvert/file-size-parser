@@ -11,7 +11,6 @@
 
 <br>
 <br>
----
----
+<hr />
 
 ### Once all tests are passing and you've completed creating the function, create a pull request to this repo.
