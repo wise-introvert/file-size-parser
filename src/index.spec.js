@@ -32,22 +32,22 @@ it("should parse arguments with arbitary number of spaces", () => {
 
 describe("Invalid arguments", () => {
   it("should throw an error when just a number is passed", () => {
-    expect(fileParser(100)).toThrow();
+    expect(() => fileParser(100)).toThrow();
   });
 
   it("should throw an error when there is not unit", () => {
-    expect(fileParser("100")).toThrow();
+    expect(() => fileParser("100")).toThrow();
   });
 
   it("should throw an error when there are no numbers", () => {
-    expect(fileParser("say-what-now")).toThrow();
+    expect(() => fileParser("say-what-now")).toThrow();
   });
 
   it("should throw an error when no argument passed", () => {
-    expect(fileParser()).toThrow();
+    expect(() => fileParser()).toThrow();
   });
 
   it("should throw an error when invalid unit type is given", () => {
-    expect(fileParser("100wp")).toThrow();
+    expect(() => fileParser("100wp")).toThrow();
   });
 });
