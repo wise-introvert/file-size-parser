@@ -5,13 +5,13 @@
  *
  * The fileParser function should work like this:
  *
- * fileParser("100kb")     ---> 0.1
+ * fileParser("100kb")     ---> 0.09765625
  * fileParser("100mb")     ---> 100.00
  * fileParser("100gb")     ---> 102400.00
  * fileParser("100tb")     ---> 104857600.00
- * fileParser("   100kb")  ---> 0.1
- * fileParser("100    kb") ---> 0.1
- * fileParser("100kb   ")  ---> 0.1
+ * fileParser("   100kb")  ---> 0.09765625
+ * fileParser("100    kb") ---> 0.09765625
+ * fileParser("100kb   ")  ---> 0.09765625
  *
  * Also, any invalid input (format or unit) should result in an error.
  * For example:
