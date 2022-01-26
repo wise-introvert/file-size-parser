@@ -21,7 +21,7 @@
  * fileParser("100wba")   ---> Error
  * fileParser("110al0")   ---> Error
  *
- * @param  {string | number} file-size - file size to be converted
+ * @param  {string} file-size - file size to be converted
  * @return {number}
  */
 module.exports = function (fileSize) {
