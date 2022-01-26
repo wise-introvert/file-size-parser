@@ -9,7 +9,7 @@
 const fileParser = require("./file-parser");
 
 it("parse file size given in kbs", () => {
-  expect(fileParser("100kb")).toBe(0.1);
+  expect(fileParser("100kb")).toBe(0.09765625);
 });
 
 it("parse file size given in mbs", () => {
@@ -25,9 +25,9 @@ it("parse file size given in tbs", () => {
 });
 
 it("should parse arguments with arbitary number of spaces", () => {
-  expect(fileParser("   100 kb")).toBe(0.1);
-  expect(fileParser("   100 kb       ")).toBe(0.1);
-  expect(fileParser("   100           kb")).toBe(0.1);
+  expect(fileParser("   100 kb")).toBe(0.09765625);
+  expect(fileParser("   100 kb       ")).toBe(0.09765625);
+  expect(fileParser("   100           kb")).toBe(0.09765625);
 });
 
 describe("Invalid arguments", () => {
