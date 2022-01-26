@@ -24,6 +24,26 @@
  * @param  {string} file-size - file size to be converted
  * @return {number}
  */
-module.exports = function (fileSize) {
-  // ...
-};
+function fileParser(fileSize) {
+  if (!/(kb|mb|gb|tb)/gi.test(fileSize) || typeof fileSize == "number")
+    throw new Error();
+
+  var cleaned = fileSize.trim().replace(/ +/gi, "");
+  var units = /(kb|mb|gb|tb)/gi.exec(cleaned)[1];
+  var size = cleaned.split(/kb|mb|gb|tb/gi)[0];
+
+  switch (units) {
+    case "kb":
+      return size / 1024;
+    case "mb":
+      return parseFloat(size);
+    case "gb":
+      return size * 1024;
+    case "tb":
+      return size * 1024 * 1024;
+    default:
+      throw new Error();
+  }
+}
+
+module.exports = fileParser;
