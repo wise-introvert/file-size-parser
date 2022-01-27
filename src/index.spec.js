@@ -24,6 +24,10 @@ it("parse file size given in tbs", () => {
   expect(fileParser("100tb")).toBe(104857600.0);
 });
 
+it("parse file size regardless of the case", () => {
+  expect(fileParser("100MB")).toBe(100.0);
+});
+
 it("should parse arguments with arbitary number of spaces", () => {
   expect(fileParser("   100 kb")).toBe(0.09765625);
   expect(fileParser("   100 kb       ")).toBe(0.09765625);
