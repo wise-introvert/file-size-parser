@@ -25,5 +25,5 @@
  * @return {number}
  */
 module.exports = function (fileSize) {
-  // ...
+  console.log("some bogus code");
 };
